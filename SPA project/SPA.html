@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sngle Page Application - Project</title>
+</head>
+<script>
+    var pages = {
+        'Home' : 'Welcome to RTX company. This is our homepage <br/><br/><img src ="Images/GM-1.jpg" style = "width:500px"> ',
+        'AboutUs' : 'Briefly explained about our company RTX <br/><br/><img src ="Images/GM-2.jpg" style = "width:500px"> ',
+        'Services' : 'The services we provide is mainly in gaming area <br/><br/><img src ="Images/GM-3.jpg" style = "width:500px"> ',
+        'Contact' : 'You can contact us here <br/><br/><img src = "Images/GM-4.jpg" Style = "width:500px"> '
+    };
+
+    function getPage (PAGE){
+        var pgToReturn;
+
+        switch(PAGE){
+
+            case 'Home' :
+                pgToReturn = pages.Home;
+                break;
+
+            case 'AboutUs' :
+                pgToReturn = pages.AboutUs;
+                break;
+                
+            case 'Services' :
+                pgToReturn = pages.Services;
+                break;
+                
+            case 'Contact' :
+                pgToReturn = pages.Contact;
+                break;     
+        }
+        document.getElementById('Content').innerHTML = pgToReturn;
+        
+    }
+</script>
+
+<body onload="getPage('Home')">
+    <div style="width: 10%; float: left ; background: #e1e4c9; height: 100%;"> 
+        <ul>
+            <li style="line-height: 50px;">
+                <a href="#" onclick="getPage('Home')">
+                    Home
+                </a>
+            </li>
+            <li style="line-height: 50px;">
+                <a href="#" onclick="getPage('AboutUs')">
+                    About Us
+                </a>
+            </li>
+            <li style="line-height: 50px;">
+                <a href="#" onclick="getPage('Services')">
+                    Services
+                </a>
+            </li>
+            <li style="line-height: 50px;">
+                <a href="#" onclick="getPage('Contact')">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div style="width: 100%; float: right; background: #de6f6f; color: #fff; height: 90%; font-size: 50px;">
+        <p style="margin-left: 50px;" id="Content"></p>
+    </div> 
+    
+</body>
+</html>
